@@ -27,7 +27,7 @@ function renderTasks(tasks) {
     <a class="${tasks[i].priority}" id="${tasks[i].id}"><ion-icon name="remove-outline"></ion-icon></a>
     <p>${tasks[i].title}</p>
     <p>${tasks[i].desc}</p>
-    <a href="${tasks[i].link}"><ion-icon name="link-outline"></ion-icon></a>
+    <a href="${tasks[i].link}" target="_blank"><ion-icon name="link-outline"></ion-icon></a>
     
     `;
     pendingTaskArea.append(taskCard);
