@@ -38,7 +38,7 @@ body {
     height: 85vh;
     background-color: rgba(0, 0, 0, 0.051);
     margin: auto;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 /* #completed{
     border: 1px solid;
