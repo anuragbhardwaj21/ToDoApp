@@ -1,48 +1,174 @@
 :root {
   --a: #f8f9fa;
   --b: #e9ecef;
-  --c: #dee2e6;
-  --d: #ced4da;
-  --e: #adb5bd;
-  --f: #6c757d;
-  --g: #495057;
-  --i: #343a40;
-  --j: #212529;
+  --c: #EFD4FF;
+  --d: #E0AAFF;
+  --e: #C77DFF;
+  --f: #9D4EDD;
+  --g: #7B2CBF;
+  --h: #3C096C;
+  --i: #240046;
 }
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(109.6deg, #adb5bd 11.2%, #dee2e6 91.1%) fixed;
+  background: linear-gradient(109.6deg, var(--b) 11.2%, var(--c) 91.1%) fixed;
+  
 }
 #navbar {
     display: flex;
     justify-content: space-evenly;
-    background-color: var(--f);
+    background-color: rgba(0, 0, 0, 0.589);
     padding: 10px;
+    margin-bottom: 2em;
     /* clear: both; */
 }
 #navbar a{
     text-decoration: none;
-    color: var(--d);
+    color: var(--b);
 }
-#pending{
+#bodyarea{
+    display: flex;
+    align-items: center;
+}
+#pending,#completed{
+    border: .5px solid;
+    width: 49%;
+    height: 85vh;
+    background-color: rgba(0, 0, 0, 0.051);
+    margin: auto;
+    overflow-x: scroll;
+}
+/* #completed{
     border: 1px solid;
-    width: 49.5%;
-    float: left;
-}
-#completed{
-    border: 1px solid;
-    width: 49.5%;
-    float: right;
-}
+    width: 49%;
+    max-height: 80vh;
+    margin: auto;
+    overflow-x: scroll;
+} */
 #createbody{
     clear: both;
-    width: 40%;
-    background-color: rgba(0, 0, 0, 0.09);
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.189);
     top: 0;
     bottom: 0;
     margin: auto;
-    transform: translateY(50%);
-    align-self: center;
+    transform: translateY(20%);
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    transition: all .3s;
+}
+#createbody:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* background-color: rgba(0, 0, 0, 0.136); */
+}
+#createbody input,#createbody textarea,#createbody select,#createbody button{
+    font-size: medium;
+    padding: 10px;
+    border: none;
+    color: rgba(0, 0, 0, 0.612);
+    background-color: var(--b);
+}
+#createbody select{
+    color: rgba(0, 0, 0, 0.612);
+}
+#createbody select:hover{
+    cursor: pointer;
+}
+#createbody input:focus,#createbody textarea:focus,#createbody select:focus{
+    outline: none;
+}
+#createbody button{
+    border: .5px solid rgba(0, 0, 0, 0.291);
+    background-color: rgba(0, 0, 0, 0.291);
+    color: var(--b);
+    transition: all .3s;
+}
+#createbody button:hover{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.619);
+    background-color:var(--b);
+    border: .5px solid rgba(0, 0, 0, 0.734);
+}
+#pendingHeading,#completedHeading{
+    text-align: center;
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.726);
+}
+.taskCard{
+    background-color: rgba(255, 255, 255, 0.301);
+    border: .5px solid;
+    margin: 1em;
+    border-radius: 2px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.taskCard a:first-child{
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    color: rgba(0, 0, 0, 0.531);
+    padding: 7px;
+    font-size: medium;
+    transition: .2s ease-in-out;
+    margin-right: 10px;
+    color: var(--a);
+    margin-left: 10px;
+}
+.taskCard a:first-child:hover{
+    cursor: pointer;
+}
+.taskCard p:nth-child(2){
+    /* border: 1px solid; */
+    text-align: center;
+    min-width: 15%;
+    width: 15%;
+    max-width: 15%;
+    word-wrap: break-word;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.822);
+    
+}
+.taskCard p:nth-child(3){
+    font-size: small;
+    /* border: 1px solid red; */
+    word-wrap: break-word;
+    min-width: 60%;
+    width: 60%;
+    max-width: 60%;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.546);
+}
+.taskCard a:nth-child(4),.taskCard a:nth-child(5){
+    border: 1px solid;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    color: rgba(0, 0, 0, 0.531);
+    padding: 8px;
+    font-size: 1.2em;
+    transition: .2s ease-in-out;
+    margin-left: 10px;
+}
+.taskCard a:nth-child(4):hover{
+    background-color: rgba(0, 0, 0, 0.224);
+}
+
+.taskCard a:nth-child(5):hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.224);
+}
+.high{
+    background-color: rgba(224, 64, 1, 0.779);
+}
+.medium{
+    background-color: rgba(222, 152, 2, 0.738);
+}
+.low{
+    background-color: rgba(32, 132, 1, 0.49);
 }

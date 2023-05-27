@@ -19,16 +19,17 @@
       <a href="create.html">Create a Task</a>
     </div>
     <div id="createbody">
-      <input type="text" placeholder="Enter Title">
-      <textarea name="" id="" cols="30" rows="5" placeholder="Please Elaborate The Task"></textarea>
+      <input type="text" id="todo-title" placeholder="Enter Title">
+      <textarea name="" id="todo-desc" cols="30" rows="8" placeholder="Please Elaborate The Task"></textarea>
+      <input type="text" id="todo-link" placeholder="Enter Link ">
       <select id="priority-select">
         <option value="">Set Priority</option>
         <option value="high">High</option>
         <option value="medium">Medium</option>
         <option value="low">Low</option>
       </select>
-      
+      <button id="createtask">Create</button>
     </div>
   </body>
-  <script src="script.js"></script>
+  <script src="create.js"></script>
 </html>
