@@ -83,17 +83,21 @@ function renderCompletedTasks(tasks) {
       <p>${tasks[i].desc}</p>
       <a href="${tasks[i].link}" target="_blank"><ion-icon name="link-outline"></ion-icon></a>
       <a class="restore" id="${tasks[i].id}"><ion-icon name="refresh-outline"></ion-icon></ion-icon></a>
-      
+      <a class="delete" id="delete-${tasks[i].id}"><ion-icon name="trash-outline"></ion-icon></a>
       `;
     completedTaskArea.append(taskCard);
     const restoreIcon = document.getElementById(tasks[i].id);
-    console.log(restoreIcon);
-
+    const deleteIcon = document.getElementById(`delete-${tasks[i].id}`);
     restoreIcon.addEventListener("click", () => {
       removeTaskFromComplete(tasks[i].id);
       pushTaskToPending(tasks[i]);
       window.location.href = "index.html";
     });
+    deleteIcon.addEventListener("click", () => {
+        removeTaskFromComplete(tasks[i].id);
+        window.location.href = "index.html";
+      });
+
   }
 }
 
